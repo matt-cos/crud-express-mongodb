@@ -7,13 +7,64 @@
 <body>
 	<p>May Node and Express be with you.</p>
 
-	<ul class="quotes">
-		<% for(var i=0; i<quotes.length; i++) {%>
-			<li class="quote">
-				<span><%= quotes[i].name %>: </span>
-				<span><%= quotes[i].quote %></span>
-			</li>
-		<% } %>
-	</ul>
+	<table border="1" style="display: inline-block;">
+		<tbody>
+			<tr>
+				<th colspan="3">Income</th>
+			</tr>
+
+			<% for(var i=0; i<quotes.length; i++) { %>
+				<% if (quotes[i].name == 'income') { %>
+					<tr>
+						<td><%= quotes[i].description %></span>
+						<td><%= quotes[i].amount %></span>
+						<td><%= quotes[i].notes %></span>
+					</tr>
+				<% } %>
+
+			<% } %>
+
+		</tbody>
+	</table>
+
+	<table border="1" style="display: inline-block;">
+		<tbody>
+			<tr>
+				<th colspan="3">Cash Flow</th>
+			</tr>
+
+			<% for(var i=0; i<quotes.length; i++) { %>
+				<% if (quotes[i].name == 'cashflow') { %>
+					<tr>
+						<td><%= quotes[i].description %></span>
+						<td><%= quotes[i].amount %></span>
+						<td><%= quotes[i].notes %></span>
+					</tr>
+				<% } %>
+			<% } %>
+		</tbody>
+	</table>
+
+	<table border="1" style="display: inline-block;">
+		<tbody>
+			<tr>
+				<th colspan="3">Credit Flow</th>
+			</tr>
+
+			<% for(var i=0; i<quotes.length; i++) { %>
+				<% if (quotes[i].name == 'creditflow') { %>
+					<tr>
+						<td><%= quotes[i].description %></span>
+						<td><%= quotes[i].amount %></span>
+						<td><%= quotes[i].notes %></span>
+					</tr>
+				<% } %>
+			<% } %>
+		</tbody>
+	</table>
+
+	<div style="display: block;">
+		<a href="/">Add Spending</a>
+	</div>
 </body>
 </html>
