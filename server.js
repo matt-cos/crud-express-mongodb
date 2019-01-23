@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
+var port = process.env.PORT || 3000;
 var db;
 
 MongoClient.connect('mongodb://cem-user1:BsqEagpSRtKT2hB@ds253324.mlab.com:53324/crud-express-mongodb', function(err, client) {
@@ -12,7 +13,7 @@ MongoClient.connect('mongodb://cem-user1:BsqEagpSRtKT2hB@ds253324.mlab.com:53324
 	db = client.db('crud-express-mongodb');
 
 	// only starts server once the database is connected
-	app.listen(3000, function() {
+	app.listen(port, function() {
 		console.log("listening on port 3000");
 	});
 });
